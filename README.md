@@ -1,4 +1,4 @@
-# Pack of 140+ colorschemes for VIM
+# Pack of 500+ colorschemes for VIM
 
 This is just a collection of all the vim colorschemes I've been collecting over time from the web.
 
