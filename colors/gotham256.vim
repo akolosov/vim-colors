@@ -16,7 +16,7 @@
 hi clear
 if exists('syntax_on') | syntax reset | endif
 set background=dark
-let g:colors_name = 'gotham-256'
+let g:colors_name = 'gotham256'
 
 
 " Helper functions =============================================================
@@ -97,8 +97,9 @@ let s:linenr_background = 'base1'
 call s:Col('Normal', 'base6', s:background)
 
 " Line, cursor and so on.
-call s:Col('Cursor', '', 'base6')
+call s:Col('Cursor', 'base1', 'base6')
 call s:Col('CursorLine', '', 'base1')
+call s:Col('CursorColumn', '', 'base1')
 
 " Sign column, line numbers.
 call s:Col('LineNr', 'base4', s:linenr_background)
@@ -140,8 +141,8 @@ call s:Col('NonText', 'base4')
 call s:Col('Todo', 'magenta', s:background)
 
 " The column separating vertical splits.
-call s:Col('VertSplit', 'base2', 'base2')
-call s:Col('StatusLineNC', 'base2', 'base2')
+call s:Col('VertSplit', 'base2', s:linenr_background)
+call s:Col('StatusLineNC', 'base4', 'base2')
 
 " Matching parenthesis.
 call s:Col('MatchParen', 'base1', 'orange')
@@ -169,7 +170,7 @@ call s:Col('ModeMsg', 'blue')
 
 " Wild menu.
 " StatusLine determines the color of the non-active entries in the wild menu.
-call s:Col('StatusLine', 'base4', 'base2')
+call s:Col('StatusLine', 'base5', 'base2')
 call s:Col('WildMenu', 'base7', 'cyan')
 
 " The 'Hit ENTER to continue prompt'.
@@ -187,10 +188,13 @@ call s:Col('SpellLocal', 'yellow')
 call s:Col('SpellRare', 'base7', 'violet')
 
 " Diffing.
-call s:Col('DiffAdd', 'green')
-call s:Col('DiffChange', 'cyan')
-call s:Col('DiffDelete', 'red')
-call s:Col('DiffText', 'yellow')
+call s:Col('DiffAdd', 'base7', 'green')
+call s:Col('DiffChange', 'base7', 'blue')
+call s:Col('DiffDelete', 'base7', 'red')
+call s:Col('DiffText', 'base7', 'cyan')
+
+" Directories (e.g. netrw).
+call s:Col('Directory', 'cyan')
 
 
 " Programming languages and filetypes ==========================================
@@ -205,7 +209,7 @@ call s:Col('htmlItalic', 'magenta')
 call s:Col('htmlBold', 'cyan', '')
 
 
-" Plugin " =====================================================================
+" Plugin =======================================================================
 
 " GitGutter
 call s:Col('GitGutterAdd', 'green', s:linenr_background)
